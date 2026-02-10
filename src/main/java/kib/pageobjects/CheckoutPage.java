@@ -60,7 +60,7 @@ public class CheckoutPage extends AbstractComponent {
 	@FindBy(id = "error-for-TextField3")
 	WebElement errorForCity;
 
-	@FindBy(id = "error-for-Select1")
+	@FindBy(xpath = "//p[normalize-space()='Select a state / province']")
 	WebElement errorForState;
 
 	@FindBy(id = "error-for-TextField4")
@@ -73,7 +73,7 @@ public class CheckoutPage extends AbstractComponent {
 	By errorForLastNameLocator = By.id("error-for-TextField1");
 	By errorForAddressLocator = By.id("error-for-shipping-address1");
 	By errorForCityLocator = By.id("error-for-TextField3");
-	By errorForStateLocator = By.id("error-for-Select1");
+	By errorForStateLocator = By.xpath("//p[normalize-space()='Select a state / province']");
 	By errorForPostalCodeLocator = By.id("error-for-TextField4");
 	By errorForPhoneLocator = By.id("error-for-TextField5");
 
