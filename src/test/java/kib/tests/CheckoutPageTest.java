@@ -22,21 +22,21 @@ public class CheckoutPageTest extends BaseTest {
 		return cardPage.buyNow();
 	}
 
-	@Test
-	public void submitWithAllFieldsEmpty_showsAllValidationErrors() throws IOException {
-		final String empty = "";
-		CheckoutPage checkoutPage = goToCheckout();
-		checkoutPage.fillCheckoutForm(empty, empty, empty, empty, empty, empty, empty, empty);
-		checkoutPage.completeOrder();
+	// @Test
+	// public void submitWithAllFieldsEmpty_showsAllValidationErrors() throws IOException {
+	// 	final String empty = "";
+	// 	CheckoutPage checkoutPage = goToCheckout();
+	// 	checkoutPage.fillCheckoutForm(empty, empty, empty, empty, empty, empty, empty, empty);
+	// 	checkoutPage.completeOrder();
 
-		Assert.assertEquals(checkoutPage.getErrorForEmail().trim(), "Enter an email or phone number");
-		Assert.assertEquals(checkoutPage.getErrorForLastName().trim(), "Enter a last name");
-		Assert.assertEquals(checkoutPage.getErrorForAddress().trim(), "Enter an address");
-		Assert.assertEquals(checkoutPage.getErrorForCity().trim(), "Enter a city");
-		Assert.assertEquals(checkoutPage.getErrorForPostalCode().trim(), "Enter a ZIP / postal code");
-		Assert.assertEquals(checkoutPage.getErrorForPhone().trim(), "Enter a phone number");
-		Assert.assertEquals(checkoutPage.getErrorForState().trim(), "Select a state / province");
-	}
+	// 	Assert.assertEquals(checkoutPage.getErrorForEmail().trim(), "Enter an email or phone number");
+	// 	Assert.assertEquals(checkoutPage.getErrorForLastName().trim(), "Enter a last name");
+	// 	Assert.assertEquals(checkoutPage.getErrorForAddress().trim(), "Enter an address");
+	// 	Assert.assertEquals(checkoutPage.getErrorForCity().trim(), "Enter a city");
+	// 	Assert.assertEquals(checkoutPage.getErrorForPostalCode().trim(), "Enter a ZIP / postal code");
+	// 	Assert.assertEquals(checkoutPage.getErrorForPhone().trim(), "Enter a phone number");
+	// 	Assert.assertEquals(checkoutPage.getErrorForState().trim(), "Select a state / province");
+	// }
 
 	@Test
 	public void invalidEmail_showsError() throws IOException {

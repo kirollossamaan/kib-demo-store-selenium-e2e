@@ -125,8 +125,7 @@ public class CheckoutPage extends AbstractComponent {
 	}
 
 	public String getErrorForState() {
-		waitForElementToBePresent(errorForStateLocator);
-		scrollElementIntoView(errorForStateLocator);
+		waitForElementToBeVisible(errorForStateLocator);
 		return errorForState.getText();
 	}
 

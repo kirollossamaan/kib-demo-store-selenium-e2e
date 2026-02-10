@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
-import org.openqa.selenium.JavascriptExecutor;
 
 /** Shared UI helpers and navigation actions. */
 public class AbstractComponent {
@@ -48,16 +47,4 @@ public class AbstractComponent {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(by));
 	}
-
-	public void waitForElementToBePresent(By by) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.presenceOfElementLocated(by));
-	}
-
-	/** Scroll the element identified by the locator into view. Element must exist in the DOM. */
-	public void scrollElementIntoView(By by) {
-		WebElement element = driver.findElement(by);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-	}
-
 }
